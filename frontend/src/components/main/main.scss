@@ -1,0 +1,20 @@
+.main {
+    margin: 25px auto;
+    width: 100vw;
+    min-height: calc(100vh - 100px);
+    max-width: 1200px;
+    background-color: lavender;
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
+
+    .main-stack {
+        width: 600px;
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+}
