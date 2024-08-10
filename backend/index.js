@@ -27,7 +27,6 @@ app.post("/generate", async (req, res) => {
 
     try {
         const response = await openai.images.generate({
-            model: 'dall-e-3',
             prompt,
             size,
             n: 1,
