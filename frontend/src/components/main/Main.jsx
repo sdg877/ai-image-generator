@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './main.scss';
-import { Stack, TextField, FormControl, InputLabel, Select, MenuItem, Button } from "@mui/material"
+import { Stack, TextField, FormControl, InputLabel, Select, MenuItem, Button, Snackbar } from "@mui/material"
 
 const sizes = {
     small: "256x256",
@@ -11,12 +11,14 @@ const sizes = {
 function Main() {
     // const [prompt, setPrompt ] = useState("");
     const [size, setSize] = useState(sizes.small)
+    const [open, setOpen] = useState(false)
 
     const clickHandler = () => {
       console.log({ prompt, size });
 
       if (prompt === "") {
-        alert("Please enter something");
+        // alert("Please enter something");
+        setOpen(true);
         return;
       }
     }
@@ -37,6 +39,11 @@ function Main() {
                </Button>
             </FormControl>
         </Stack>
+
+        <Snackbar open={open} autoHideDuration={6000} onClose={() => setOpen(false)} message="Note archived">
+        {/* <Alert severity="error">This is an error alert — check it out!</Alert> */}
+        <h5>Error</h5>
+        </Snackbar>
     </div>
   )
 }
