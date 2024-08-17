@@ -3,7 +3,7 @@ import './navbar.scss'
 
 const Navbar = () => {
     return (
-        <div className='navbar'>Test</div>
+        <div className='navbar'>AI Image Generator</div>
     )
 }
 
