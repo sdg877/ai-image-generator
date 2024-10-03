@@ -5,6 +5,11 @@ import OpenAI from 'openai';
 
 dotenv.config();
 
+const corsOptions = {
+    origin: 'https://ai-image-generator-elkh.onrender.com',
+    optionsSuccessStatus: 200
+  };
+
 const app = express();
 app.use(cors());
 app.use(express.json());
