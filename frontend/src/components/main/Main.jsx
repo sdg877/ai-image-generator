@@ -34,8 +34,7 @@ function Main() {
         return;
       }
       setLoading(true);
-      console.log({ prompt, size });
-      const url = "http://localhost:8200/generate";
+      const url = `${process.env.REACT_APP_BACKEND_URL}/generate`;
       const data = { prompt, size };
       const response = await axios.post(url, data);
       const imgSrc = response.data.src;
@@ -77,7 +76,7 @@ function Main() {
         </FormControl>
       </Stack>
       {loading && <CircularProgress color="success" sx={{ mt: "1rem" }} />}
-      {img !== "" && <img src={img} alt="img" />}
+      {img !== "" && <img src={img} alt="Generated" />}
 
       <Snackbar
         open={open}
